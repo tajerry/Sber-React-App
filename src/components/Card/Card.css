@@ -1,0 +1,17 @@
+.card-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+}
+.card-header{
+    margin-right: 0;
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    padding-bottom: 10px;
+}
+.card-rate{
+    width: 150px;
+}

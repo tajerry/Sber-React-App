@@ -1,0 +1,19 @@
+.header{
+    width: 100%;
+    position: sticky;
+    z-index: 2;
+    top: 0;
+    color: lightgray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.auth{
+    display: flex;
+    width: 200px;
+    justify-content: space-around;
+}
+.logo{
+   display: flex;
+    align-items: center;
+}

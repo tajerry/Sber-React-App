@@ -1,0 +1,112 @@
+openapi: 3.0.0
+info:
+  title: My Blog API
+  description: API для работы с блогом
+  version: 1.0.0
+servers:
+  - url: http://localhost:5002/api
+paths:
+  /posts:
+    get:
+      summary: Получить все посты
+      responses:
+        "200":
+          description: Успешный запрос. Возвращает список всех постов.
+    post:
+      summary: Создать новый пост
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/NewPost"
+      responses:
+        "201":
+          description: Успешное создание поста. Возвращает созданный пост.
+  /posts/{id}:
+    get:
+      summary: Получить пост по ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: Идентификатор поста
+      responses:
+        "200":
+          description: Успешный запрос. Возвращает пост с указанным ID.
+        "404":
+          description: Пост не найден.
+    put:
+      summary: Обновить пост
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: Идентификатор поста
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UpdatePost"
+      responses:
+        "200":
+          description: Успешное обновление поста. Возвращает обновленный пост.
+        "404":
+          description: Пост не найден.
+    delete:
+      summary: Удалить пост
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: Идентификатор поста
+      responses:
+        "204":
+          description: Пост успешно удален.
+        "404":
+          description: Пост не найден.
+  /posts/{id}/comments:
+    get:
+      summary: Получить комментарии к посту
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: Идентификатор поста
+      responses:
+        "200":
+          description: Успешный запрос. Возвращает комментарии к посту.
+        "404":
+          description: Пост не найден.
+components:
+  schemas:
+    NewPost:
+      type: object
+      required:
+        - title
+        - body
+      properties:
+        title:
+          type: string
+          description: Заголовок поста
+        body:
+          type: string
+          description: Тело поста
+    UpdatePost:
+      type: object
+      properties:
+        title:
+          type: string
+          description: Новый заголовок поста
+        body:
+          type: string
+          description: Новое тело поста

@@ -1,0 +1,2 @@
+export const BACKEND_URL = 'http://localhost:5002';
+export const MAIN_PAGE_IMG_URL = "https://images.squarespace-cdn.com/content/v1/52efdac1e4b07964224912f6/1699038430505-M7G76IJADCW8JKDAGC76/Screenshot+2023-11-03+at+12.06.42+PM.png?format=2500w";

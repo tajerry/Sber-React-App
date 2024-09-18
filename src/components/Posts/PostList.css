@@ -1,0 +1,23 @@
+
+.mainHeader{
+    width: 400px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    justify-content:space-around;
+    align-items: flex-start;
+}
+.posts{
+    padding: 50px;
+    background-image: url("https://i.pinimg.com/originals/b3/24/bc/b324bcf2fc6d0b189e63e881c2573a7b.jpg");
+}
+.postListItem{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.postButtons{
+    display: flex;
+}

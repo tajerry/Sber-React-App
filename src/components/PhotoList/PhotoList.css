@@ -1,0 +1,11 @@
+
+.photoList{
+    padding: 150px;
+    background-image: url("https://furman.top/uploads/posts/2022-06/1655309580_19-furman-top-p-oboi-gori-20.jpg");
+}
+.photoList-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
