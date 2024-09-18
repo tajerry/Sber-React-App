@@ -1,1 +1,0 @@
-# Sber-React-App
