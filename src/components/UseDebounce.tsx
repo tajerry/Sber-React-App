@@ -8,12 +8,12 @@ function useDebounce(value: string, delay: number): string {
   useEffect(
     () => {
       // Update debounced value after delay
-      const t = setTimeout(() => {
+      const t = setTimeout(():void => {
         setDebouncedValue(value);
       }, delay);
 
       // clean up the timeout after value changes
-      return () => {
+      return ():void => {
         clearTimeout(t);
       };
     },

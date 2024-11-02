@@ -3,7 +3,7 @@ import React from "react";
 import { Menu as AntdMenu } from "antd";
 import "./Menu.css";
 import { Link } from "react-router-dom";
-function Menu() {
+function Menu():JSX.Element {
   const menuItems = [
     { title: "Главная", path: "/" },
     { title: "Посты", path: "posts" },
@@ -13,7 +13,7 @@ function Menu() {
   return (
     <div>
       <AntdMenu className="menu">
-        {menuItems.map((item, key) => (
+        {menuItems.map((item:{title:string, path: string}, key:number) => (
           <AntdMenu.Item key={key}>
             <Link to={item.path}>{item.title}</Link>
           </AntdMenu.Item>

@@ -1,6 +1,6 @@
 import Root from "./components/Root";
 
-function App() {
+function App():JSX.Element{
   return <Root />;
 }
 

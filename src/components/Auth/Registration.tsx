@@ -1,6 +1,6 @@
 import { Button, Form, Input } from "antd";
 import { Container } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import {NavigateFunction, useNavigate} from "react-router-dom";
 import { useCreateUserMutation } from "../../tkqstore/services/userApi";
 import { withErrorBoundary } from "react-error-boundary";
 import { Fallback } from "../Fallback";
@@ -9,8 +9,8 @@ interface Data {
   name: string;
   email: string;
 }
-function Registration() {
-  const navigate = useNavigate();
+function Registration():JSX.Element {
+  const navigate:NavigateFunction = useNavigate();
   const [createUser] = useCreateUserMutation();
   const formSend = (data: Data): void => {
     createUser({

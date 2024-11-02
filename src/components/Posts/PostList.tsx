@@ -14,7 +14,7 @@ import { withErrorBoundary } from "react-error-boundary";
 import { Fallback } from "../Fallback";
 import { useUserContext } from "../../hooks/useUserContext";
 
-function PostList() {
+function PostList():JSX.Element {
   const [searchTerm, setSearchTerm] = useState("");
   const debouncedSearchTerm: string = UseDebounce(searchTerm, 2000);
   let { data: posts, isLoading } = useGetPostsALLQuery();

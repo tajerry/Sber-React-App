@@ -1,6 +1,6 @@
 import { Button, Form, Input } from "antd";
 import { Container } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import {NavigateFunction, useNavigate} from "react-router-dom";
 import { withErrorBoundary } from "react-error-boundary";
 import { Fallback } from "../Fallback";
 import { useUserContext } from "../../hooks/useUserContext";
@@ -9,10 +9,10 @@ interface Data {
   email: string;
   isAuth: boolean;
 }
-function CreateUser() {
-  const navigate = useNavigate();
+function CreateUser():JSX.Element {
+  const navigate:NavigateFunction = useNavigate();
   const { user, setUser } = useUserContext();
-  const formSend = (data: Data) => {
+  const formSend = (data: Data):void => {
     setUser({
       name: user.name,
       email: data.email,

@@ -1,13 +1,13 @@
 import { Button, Form, Input } from "antd";
 import { Container } from "@mui/material";
-import { useNavigate, useParams } from "react-router-dom";
+import {NavigateFunction, Params, useNavigate, useParams} from "react-router-dom";
 import "./CreateComment.css";
 import { useCreateCommentMutation } from "../../tkqstore/services/commentApi";
 import { withErrorBoundary } from "react-error-boundary";
 import { Fallback } from "../Fallback";
 
-function CreateComment() {
-  const navigate = useNavigate();
+function CreateComment():JSX.Element {
+  const navigate:NavigateFunction = useNavigate();
   const [form] = Form.useForm();
   const params = useParams();
   const id: number = params.id !== undefined ? parseInt(params.id) : 0;
@@ -19,7 +19,7 @@ function CreateComment() {
     body: string;
     rate: string;
   }
-  const formSend = async (values: Values) => {
+  const formSend = async (values: Values):Promise<void> => {
     createComment({
       postId: id,
       title: values.title,

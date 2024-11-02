@@ -1,6 +1,6 @@
 import { Container } from "@mui/material";
 
-function NotFound() {
+function NotFound():JSX.Element {
   return (
     <Container>
       <h1>404 (Not Found)</h1>

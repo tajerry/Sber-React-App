@@ -17,7 +17,7 @@ import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import CreateComment from "./CreateComment/CreateComment";
 import Registration from "./Auth/Registration";
 import Post from "./Post/Post";
-function Root() {
+function Root():JSX.Element {
   return (
     <Layout>
       <Header />

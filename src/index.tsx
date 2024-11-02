@@ -6,7 +6,7 @@ import { UserContextProvider } from "./components/Context/UserContextProvider";
 import { Provider } from "react-redux";
 import store from "./tkqstore/store";
 
-const root = ReactDOM.createRoot(
+const root : ReactDOM.Root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement,
 );
 root.render(

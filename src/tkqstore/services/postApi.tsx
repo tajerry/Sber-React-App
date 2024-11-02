@@ -13,7 +13,7 @@ export const postApi = createApi({
   endpoints: (builder) => {
     return {
       getPostsALL: builder.query<Post[], void>({
-        query: () => {
+        query: ():  string | FetchArgs => {
           return `/posts`;
         },
         providesTags: ["POSTS"],

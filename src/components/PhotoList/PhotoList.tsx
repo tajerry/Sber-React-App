@@ -10,7 +10,7 @@ import {
 import { withErrorBoundary } from "react-error-boundary";
 import { Fallback } from "../Fallback";
 
-function PhotoList() {
+function PhotoList():JSX.Element {
   const { data: items, isLoading } = useGetPhotosALLQuery();
   const [deletePhoto, { data: error }] = useDeletePhotoMutation();
   return (

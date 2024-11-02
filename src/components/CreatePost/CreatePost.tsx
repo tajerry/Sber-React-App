@@ -1,6 +1,6 @@
 import { Button, Form, Input } from "antd";
 import { Container } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import {NavigateFunction, useNavigate} from "react-router-dom";
 import "./CreatePost.css";
 import { useCreatePostMutation } from "../../tkqstore/services/postApi";
 import { withErrorBoundary } from "react-error-boundary";
@@ -12,11 +12,11 @@ interface Values {
   url: string;
   rate: number;
 }
-function CreatePost() {
-  const navigate = useNavigate();
+function CreatePost():JSX.Element {
+  const navigate:NavigateFunction = useNavigate();
   const [form] = Form.useForm();
   const [createPost] = useCreatePostMutation();
-  const formSend = (values: Values) => {
+  const formSend = (values: Values):void => {
     createPost({
       title: values.title,
       body: values.body,

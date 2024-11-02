@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import {Link, NavigateFunction, useNavigate, useParams} from "react-router-dom";
 import Card from "../Card/Card";
-import { Alert, CircularProgress, Container, Grid } from "@mui/material";
+import {CircularProgress, Container, Grid } from "@mui/material";
 import { Form, Input, Button, Rate } from "antd";
 import "./Post.css";
 import {
@@ -24,7 +24,7 @@ function Post() {
   const [editPost] = useEditPostMutation();
   const { data: comments, isLoading } = useGetCommentALLQuery(id);
   const [deleteComment] = useDeleteCommentMutation();
-  const navigate = useNavigate();
+  const navigate:NavigateFunction = useNavigate();
   interface Values {
     id: number;
     title: string;
@@ -38,7 +38,7 @@ function Post() {
     body: string;
     rate: number;
   }
-  const formSend = async (values: Values) => {
+  const formSend = async (values: Values):Promise<void> => {
     editPost({
       id: id,
       title: values.title,
@@ -48,10 +48,10 @@ function Post() {
     });
     setFormVisible(false);
   };
-  function showForm() {
+  function showForm():void {
     setFormVisible(true);
   }
-  function goBack() {
+  function goBack():void {
     navigate(-1);
   }
   return (

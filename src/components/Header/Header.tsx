@@ -7,7 +7,7 @@ import { useGetUserQuery } from "../../tkqstore/services/userApi";
 import { withErrorBoundary } from "react-error-boundary";
 import { Fallback } from "../Fallback";
 import { useUserContext } from "../../hooks/useUserContext";
-function Header() {
+function Header():JSX.Element {
   const { user, setUser } = useUserContext();
   const { data: headerUser } = useGetUserQuery(user);
   let name: string = "";
